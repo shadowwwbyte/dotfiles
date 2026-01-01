@@ -1,0 +1,13 @@
+# For themes https://github.com/alacritty/alacritty-theme
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+]
+
+[font]
+size = 11
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
