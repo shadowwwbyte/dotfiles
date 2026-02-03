@@ -11,8 +11,6 @@ M.base46 = {
 	hl_override = {
 		Comment = { italic = true },
 		["@comment"] = { italic = true },
-    ["@punctuation.bracket"] = { fg = "white" },
-    ["@punctuation.delimiter"] = { fg = "white" },
 	},
 }
 

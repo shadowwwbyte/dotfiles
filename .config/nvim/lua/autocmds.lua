@@ -1,7 +1,5 @@
 require "nvchad.autocmds"
 
-require "nvchad.autocmds"
-
 vim.api.nvim_create_autocmd("BufReadPost", {
   pattern = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
   callback = function()
@@ -36,4 +34,3 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.expandtab = true
   end,
 })
-

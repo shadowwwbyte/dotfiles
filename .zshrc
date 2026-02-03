@@ -8,12 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="itchy"
-# ZSH_THEME="pmcgee"
-# ZSH_THEME="bira"
-# ZSH_THEME="cypher"
-ZSH_THEME="gentoo"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,9 +70,34 @@ ZSH_THEME="gentoo"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages sudo)
+plugins=(
+    git
+    sudo
+    colored-man-pages
+)
+
+
+# >>> pyenv setup >>>
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init - zsh)"
+  eval "$(pyenv virtualenv-init -)"
+fi
+# <<< pyenv setup <<<
 
 source $ZSH/oh-my-zsh.sh
+
+# Autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Syntax Highlighting — must be last
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+eval "$(starship init zsh)"
+
+alias ls='lsd'
 
 # User configuration
 
@@ -107,36 +127,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias ls='lsd'
-alias img='kitty +kitten icat'
-
-# Autosuggestions
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Syntax Highlighting — must be last
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# export LESS=-R
-# unset LESSCOLORIZER
-# unset LESS_TERMCAP_so
-# export MANPAGER="less -R --use-color -Dd+r -Du+b"
-
-# --- Colored Man Pages ---
-# export LESS_TERMCAP_mb=$'\e[1;31m'      # Blinking / bold red
-# export LESS_TERMCAP_md=$'\e[1;36m'      # Bold cyan (headers)
-# export LESS_TERMCAP_me=$'\e[0m'         # Reset
-# export LESS_TERMCAP_se=$'\e[0m'         # Reset
-# export LESS_TERMCAP_so=$'\e[1;44;33m'   # Standout: blue background, yellow text
-# export LESS_TERMCAP_ue=$'\e[0m'         # Reset
-# export LESS_TERMCAP_us=$'\e[1;32m'      # Underline green
-
-export ANDROID_HOME=/opt/android-sdk
-export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-export PAGER=less
-export MANPAGER="less -R"
-export FREEPLANE_JAVA_HOME=/usr/lib/jvm/java-11-openjdk
-
-eval "$(starship init zsh)"
