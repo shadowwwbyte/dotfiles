@@ -81,6 +81,8 @@ plugins=(
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init - zsh)"
   eval "$(pyenv virtualenv-init -)"
@@ -127,3 +129,14 @@ alias ls='lsd'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/manasa/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# Android SDK setup
+export ANDROID_HOME=/opt/android-sdk
+
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/build-tools
