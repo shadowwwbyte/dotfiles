@@ -73,6 +73,16 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# rofi (sudo pacman -S rofi xdotool rofi-emoji rofimoji)
+# <C-Tab> to switch between the modes
+bindsym $mod+z exec rofi -show drun
+bindsym $mod+Shift+z exec rofi -show run
+bindsym $mod+period exec rofimoji
+
+# copyq
+exec --no-startup-id copyq
+bindsym $mod+p exec copyq menu
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
