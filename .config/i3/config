@@ -17,7 +17,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -35,6 +35,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 
+# autotiling (sudo pacman -S autotiling)
+exec_always --no-startup-id autotiling -w 1 2 3 4 5 6 7 8 9
+
+# Brightness controls (brightnessctl)
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 300-
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -49,8 +59,8 @@ floating_modifier $mod
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
-# start a terminal (change it to kitty or alacritty, default is alacritty now i3-sensible-terminal)
-bindsym $mod+Return exec alacritty
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -191,3 +201,10 @@ bar {
         status_command i3status
 }
 
+# Remove window borders
+default_border pixel 0
+default_floating_border pixel 0
+
+# Remove gaps
+gaps inner 2
+gaps outer 0
