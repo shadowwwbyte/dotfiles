@@ -76,8 +76,11 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # rofi (sudo pacman -S rofi xdotool rofi-emoji rofimoji)
 # <C-Tab> to switch between the modes
 bindsym $mod+z exec rofi -show drun
-bindsym $mod+Shift+z exec rofi -show run
+bindsym $mod+Shift+z exec rofi -show window
 bindsym $mod+period exec rofimoji
+bindsym $mod+u exec rofimoji --prompt unicode --files math superscript latin arrows
+bindsym $mod+o exec rofi -show filebrowser
+bindsym $mod+g exec rofi -show recursivebrowser
 
 # copyq
 exec --no-startup-id copyq

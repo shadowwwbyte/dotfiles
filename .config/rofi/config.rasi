@@ -1,5 +1,5 @@
 configuration {
-    modes: "window,drun,run,emoji,calc";
+    modes: "window,drun,run,emoji,calc,filebrowser,recursivebrowser";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
