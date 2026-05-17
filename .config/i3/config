@@ -82,9 +82,15 @@ bindsym $mod+u exec rofimoji --prompt unicode --files math superscript latin arr
 bindsym $mod+o exec rofi -show filebrowser
 bindsym $mod+g exec rofi -show recursivebrowser
 
+# screenrecorder
+bindsym $mod+c exec bash /home/manasa/Scripts/recorder_menu.sh
+
 # copyq
 exec --no-startup-id copyq
 bindsym $mod+p exec copyq menu
+
+# dunst notification daemon
+# exec --no-startup-id dunst
 
 # change focus
 bindsym $mod+j focus left
