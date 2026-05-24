@@ -84,6 +84,8 @@ bindsym $mod+g exec rofi -show recursivebrowser
 
 # screenrecorder
 bindsym $mod+c exec bash /home/manasa/Scripts/recorder_menu.sh
+bindsym $mod+shift+F23 exec bash /home/manasa/Scripts/recorder_menu.sh # copiolt key
+# sudo pacman -S evtest, sudo evtest, press 3
 
 # copyq
 exec --no-startup-id copyq
