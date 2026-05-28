@@ -6,6 +6,7 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+$conda\
 $character"""
 
 [username]
@@ -51,7 +52,19 @@ format = "[$duration]($style) "
 style = "bold yellow"
 
 [python]
+# symbol = " "
 format = "[$virtualenv]($style) "
 style = "bold bright-black"
 detect_extensions = []
 detect_files = []
+# symbol = " "
+# style = "bold yellow"
+# format = "[${symbol}(${virtualenv})]($style) "
+# detect_extensions = []
+# detect_files = []
+
+[conda]
+symbol = " "
+style = "bold yellow"
+format = "[$symbol$environment]($style) "
+ignore_base = true
