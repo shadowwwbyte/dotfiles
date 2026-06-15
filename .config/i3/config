@@ -227,5 +227,11 @@ default_border pixel 0
 default_floating_border pixel 0
 
 # Remove gaps
-gaps inner 2
-gaps outer 0
+gaps inner 8
+gaps outer 8
+
+# Wallpaper
+exec_always --no-startup-id /home/manasa/Scripts/random-wallpaper.sh
+
+exec --no-startup-id /usr/lib/xdg-desktop-portal-gtk
+exec --no-startup-id sleep 2 && /usr/lib/xdg-desktop-portal
