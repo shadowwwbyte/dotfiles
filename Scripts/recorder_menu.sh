@@ -3,7 +3,7 @@
 SCRIPTS_DIR="/home/manasa/Scripts"
 VIDEOS_DIR="/home/manasa/Videos/My_Videos"
 
-CHOICE=$(printf "󰕧 Record - System Audio\n󰍬 Record - Microphone\n󰝟 Record - No Audio\n󰆏 Convert MKV to MP4\n󰓅 Change Speed\n󰓛 Stop Recording" \
+CHOICE=$(printf "󰕧 Record - System Audio\n󰍬 Record - Microphone\n󰝟 Record - No Audio\n󰕃 Stream to Twitch - System Audio\n󰕃 Stream to Twitch - Microphone\n󰕃 Stream to Twitch - No Audio\n󰗃 Stream to YouTube - System Audio\n󰗃 Stream to YouTube - Microphone\n󰗃 Stream to YouTube - No Audio\n󰆏 Convert MKV to MP4\n󰓅 Change Speed\n󰓛 Stop Recording" \
   | rofi -dmenu -p "󰕧 Recorder")
 
 case "$CHOICE" in
@@ -24,6 +24,30 @@ case "$CHOICE" in
     NAME=$(rofi -dmenu -p "File name (no extension)" < /dev/null)
     [ -z "$NAME" ] && exit 0
     bash "$SCRIPTS_DIR/record_no_audio.sh" "$NAME" &
+    ;;
+
+  "󰕃 Stream to Twitch - System Audio")
+    bash "$SCRIPTS_DIR/stream_twitch_system_audio.sh" &
+    ;;
+
+  "󰕃 Stream to Twitch - Microphone")
+    bash "$SCRIPTS_DIR/stream_twitch_microphone_audio.sh" &
+    ;;
+
+  "󰕃 Stream to Twitch - No Audio")
+    bash "$SCRIPTS_DIR/stream_twitch_no_audio.sh" &
+    ;;
+
+  "󰗃 Stream to YouTube - System Audio")
+    bash "$SCRIPTS_DIR/stream_youtube_system_audio.sh" &
+    ;;
+
+  "󰗃 Stream to YouTube - Microphone")
+    bash "$SCRIPTS_DIR/stream_youtube_microphone_audio.sh" &
+    ;;
+
+  "󰗃 Stream to YouTube - No Audio")
+    bash "$SCRIPTS_DIR/stream_youtube_no_audio.sh" &
     ;;
 
   "󰆏 Convert MKV to MP4")
