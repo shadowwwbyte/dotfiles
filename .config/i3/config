@@ -60,7 +60,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -90,6 +91,9 @@ bindsym $mod+shift+F23 exec bash /home/manasa/Scripts/recorder_menu.sh # copiolt
 # copyq
 exec --no-startup-id copyq
 bindsym $mod+p exec copyq menu
+
+# screen annotator
+bindsym $mod+t exec gromit-mpx
 
 # dunst notification daemon
 # exec --no-startup-id dunst
