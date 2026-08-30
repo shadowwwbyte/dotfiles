@@ -95,6 +95,10 @@ bindsym $mod+p exec copyq menu
 # screen annotator
 bindsym $mod+t exec gromit-mpx
 
+# ocr
+# bindsym $mod+b exec --no-startup-id maim -s | tesseract stdin stdout 2>/dev/null | xclip -selection clipboard
+bindsym $mod+b exec --no-startup-id "maim -s | magick png:- -resize 300% -sharpen 0x1 png:- | tesseract stdin stdout --psm 6 2>/dev/null | xclip -selection clipboard"
+
 # dunst notification daemon
 # exec --no-startup-id dunst
 
