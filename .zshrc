@@ -100,6 +100,8 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
 
 alias ls='lsd'
+export EDITOR=vim
+export VISUAL=vim
 
 # User configuration
 

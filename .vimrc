@@ -1,9 +1,11 @@
 " plugin manager im using vim-plug
 " https://github.com/junegunn/vim-plug
+" :PlugInstall
 
 call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-commentary'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 set background=dark
@@ -23,3 +25,6 @@ set autoindent
 set expandtab
 set clipboard=unnamedplus
 
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
